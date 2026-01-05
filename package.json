@@ -1,0 +1,24 @@
+{
+  "name": "catalogo_productos",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "supertest": "^7.1.4"
+  },
+  "devDependencies": {
+    "jest": "^30.0.5",
+    "jsdom": "^26.1.0"
+  }
+}
