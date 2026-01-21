@@ -21,23 +21,17 @@ pipeline {
         }
 
         stage('Construir Imagen Docker') {
-            when {
-                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-            }
             steps {
-                sh 'docker build -t tienda-online:latest .'
+                sh 'docker build -t catalogo-productos:latest .'
             }
         }
 
         stage('Ejecutar Contenedor') {
-            when {
-                expression { currentBuild.result == null || currentBuild.result == 'SUCCESS' }
-            }
             steps {
                 sh '''
-                    docker stop tienda-online || true
-                    docker rm tienda-online || true
-                    docker run -d --name tienda-online -p 3001:3000 tienda-online:latest
+                    docker stop catalogo-productos || true
+                    docker rm catalogo-productos || true
+                    docker run -d --name catalogo-productos -p 3000:3000 catalogo-productos:latest
                 '''
             }
         }
