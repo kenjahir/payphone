@@ -1,11 +1,20 @@
-# Usa una imagen base de Nginx
-FROM nginx:alpine
+# Imagen base con Node.js
+FROM node:25
 
-# Elimina el contenido por defecto de Nginx
-RUN rm -rf /usr/share/nginx/html/*
+# Directorio de trabajo dentro del contenedor
+WORKDIR /usr/src/app
 
-# Copia todo el contenido del proyecto (HTML, CSS, JS)
-COPY . /usr/share/nginx/html
+# Copiar archivos de dependencias primero (mejores builds)
+COPY package*.json ./
 
-# Expone el puerto 80
-EXPOSE 80
+# Instalar dependencias
+RUN npm install
+
+# Copiar el resto del código
+COPY . .
+
+# Exponer el puerto que usa la app
+EXPOSE 3000
+
+# Comando para iniciar la aplicación
+CMD ["node", "index.js"]
