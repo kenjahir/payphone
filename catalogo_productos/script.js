@@ -10,7 +10,7 @@ const products = [
     image: "https://zapatosxmayor.com/wp-content/uploads/2020/11/zapato-casual-hombre-zapatos-negros.jpg"
   },
   {
-    name: "Gorra Azul",
+    name: "Gorra blue",
     price: 14.99,
     image: "https://neweraec.vtexassets.com/arquivos/ids/156733/10047531_1.jpg?v=638324710543770000"
   }
