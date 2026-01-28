@@ -1,6 +1,6 @@
 const products = [
   {
-    name: "Camiseta Roja",
+    name: "Camiseta Azul",
     price: 19.99,
     image:
       "https://marinaracewear.com/storage/media/attributes/8/9/5/9/7/89597/2.jpg",
